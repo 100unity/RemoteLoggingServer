@@ -27,8 +27,8 @@ server.on('connection', function (socket) {
     })
 
     readline.on('line', function (input) {
-        if(input == "Q") process.exit(1)
-        socket.write(input)
+        if(input == "Q") process.exit(0)
+        else socket.write(input)
     })
     
 })

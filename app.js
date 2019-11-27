@@ -3,7 +3,7 @@ const readline = require('readline').createInterface({
     output: process.stdout
 })
 const Net = require('net')
-const port = 12001
+const port = 12000
 
 const server = new Net.Server()
 
@@ -27,8 +27,8 @@ server.on('connection', function (socket) {
     })
 
     readline.on('line', function (input) {
-        if(input == "Q") process.exit(0)
-        else socket.write(input)
+        if(input.toUpperCase() == "Q") process.exit(0)
+        else socket.write(input.toUpperCase())
     })
     
 })
